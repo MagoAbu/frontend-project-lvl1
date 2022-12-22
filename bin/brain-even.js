@@ -22,12 +22,11 @@ const getParityCheck = () => {
     console.log(`Question: ${num}`);
     const userAnswer = readdlineSync.question('Your answer: ');
 
-    const correctOutput = 'Correct!';
-    const incorrectOutput = `'${userAnswer}' is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${userName}`;
-
     if (correctAnswer === userAnswer) {
+      const correctOutput = 'Correct!';
       console.log(correctOutput);
     } else {
+      const incorrectOutput = `'${userAnswer}' is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${userName}`;
       console.log(incorrectOutput);
       return;
     }
