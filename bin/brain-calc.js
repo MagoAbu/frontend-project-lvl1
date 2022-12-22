@@ -28,22 +28,19 @@ const getCalc = () => {
 
     let correctAnswer;
     if (operator === '+') {
-      correctAnswer = operand1 + operand2;
+      correctAnswer = String(operand1 + operand2);
     } else if (operator === '-') {
-      correctAnswer = operand1 - operand2;
+      correctAnswer = String(operand1 - operand2);
     } else {
-      correctAnswer = operand1 * operand2;
+      correctAnswer = String(operand1 * operand2);
     }
-    console.log(typeof correctAnswer);
 
     const userAnswer = readlineSync.question('Your answer: ');
-    const userAnswerToNum = Number(userAnswer);
-    console.log(userAnswerToNum);
-    if (userAnswerToNum === correctAnswer) {
+    if (userAnswer === correctAnswer) {
       const trueAnswer = 'Correct!';
       console.log(trueAnswer);
     } else {
-      const falseAnswer = `${userAnswer} is wrong answer ;(. Correct answer was '${correctAnswer}'`;
+      const falseAnswer = `${userAnswer} is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}`;
       console.log(falseAnswer);
       return;
     }
